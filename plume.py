@@ -55,11 +55,12 @@ def open_file(path):
 
 # These are the available priorities and status (feel free to add some!)
 
-PRIORITIES = {'feature':  colored('feature ', 'green'),
-              'trivial':  colored('trivial ', 'cyan'),
-              'minor':    colored('minor   ', 'yellow'),
-              'major':    colored('major   ', 'red'),
-              'critical': colored('critical', 'red', attrs=['bold'])}
+PRIORITIES = {'feature':   colored('feature  ', 'green'),
+              'trivial':   colored('trivial  ', 'cyan'),
+              'undecided': colored('undecided', 'white'),
+              'minor':     colored('minor    ', 'yellow'),
+              'major':     colored('major    ', 'red'),
+              'critical':  colored('critical ', 'red', attrs=['bold'])}
 
 # TEMPORARY (cmd.exe does not support unicode)
 if os.name == 'nt':
