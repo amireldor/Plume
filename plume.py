@@ -262,13 +262,14 @@ if __name__ == '__main__':
                 summary = align.align_paragraph(issue['summary'], width)
 
                 if len(summary) == 1:
-                    print(" [{0}]  {1}  {2}  {3}  {4} {5}".format(
+                    print(" {} [{}]  {}  {}  {}/{}".format(
+                          to_issue(index),
                           ISSUE_STATUS[issue['status']],
                           PRIORITIES[issue['priority']],
-                          summary[0].ljust(width),
+                          summary[0].ljust(width).replace(' ', '-'),
                           to_date(issue['created']),
                           to_date(issue['modified']),
-                          to_issue(index)))
+                          ))
                 else:
                     for i, line in enumerate(summary):
                         if i == 0:
