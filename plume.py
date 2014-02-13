@@ -266,23 +266,24 @@ if __name__ == '__main__':
                           to_issue(index),
                           ISSUE_STATUS[issue['status']],
                           PRIORITIES[issue['priority']],
-                          summary[0].ljust(width).replace(' ', '-'),
+                          summary[0].ljust(width),
                           to_date(issue['created']),
                           to_date(issue['modified']),
                           ))
                 else:
                     for i, line in enumerate(summary):
                         if i == 0:
-                            print(" [{0}]  {1}  {2}".format(
+                            print(" {} [{}]  {}  {}".format(
+                                  to_issue(index),
                                   ISSUE_STATUS[issue['status']],
                                   PRIORITIES[issue['priority']],
                                   line))
                         elif i == len(summary) - 1:
-                            print(' ' * 16 + "{0}  {1}  {2} {3}".format(
+                            print(' ' * 23 + "{}  {}/{}".format(
                                   line.ljust(width),
                                   to_date(issue['created']),
                                   to_date(issue['modified']),
-                                  to_issue(index)))
+                                  ))
                         else:
                             print(' ' * 16 + line)
 
